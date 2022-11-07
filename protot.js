@@ -51,13 +51,14 @@ for (i in range(num_etapas)) {
         } else {
             tf_tiempo = false;
             n_no+=1;
-        } else {
+        }
+    } else {
         tf_tiempo = true;
         tiempo = float(input('Introduzca el tiempo: '));
-        }
     }
    
-    if (i == 0: 
+//velocidad inicial
+    if (i == 0){
         if (n_no == 0) {
             vel_ini_ver=input('Sabe la Velocidad Inicial?(Si/No): ');
             if (vel_ini_ver.lower()=='si') {
@@ -65,17 +66,30 @@ for (i in range(num_etapas)) {
                 tf_vel_ini = true;
             } else {
                 tf_vel_ini = false;
-                n_no+=1;} 
-        else {
+                n_no+=1;
+            } 
+        } else {
             vel_ini = float(input('Introduzca la velocidad inicial: '));
             tf_vel_ini = true;
-    else: 
-        if (tf_vel_fin==true: vel_ini = vel_fin;
-        } else if (tf_vel_fin==false: vel_ini = vel_fin;
+        }
 
+    } else { 
+        if (tf_vel_fin==true){
+            vel_ini = vel_fin
+        }
+        else if (tf_vel_fin==false){ 
+            vel_ini = vel_fin
+        }
+    }
+//velocidad final
     if (tf_acel==true && tf_tiempo==true && tf_vel_ini==true) {
             tf_vel_fin = false;
     } else {
+        if (acel==0)&(tf_tiempo==false){
+            console.log('Timepo indeterminable porque la velocidad no cambia, se pasa a la sig. etapa');
+            tf_vel_fin = true
+            vel_fin = vel_ini
+        }
         if (n_no==0) {
             vel_fin_ver=input('Sabe la Velocidad Final?(Si/No): ');
             if (vel_fin_ver.lower()=='si') {
@@ -86,19 +100,26 @@ for (i in range(num_etapas)) {
             vel_fin = float(input('Introduzca la velocidad final: '));
             tf_vel_fin = true;
             }
+
+//calculos
+
+//calculo velociad final
     if (tf_vel_fin==false) {
         vel_fin = (acel*tiempo)+vel_ini;
         if (acel<0 == (vel_fin=0))
         console.log('La velocidad final es de:',vel_fin);
 
+//calculo velociad inicial
     if (tf_vel_ini==false) {
         vel_ini = vel_fin-acel*tiempo;
         console.log('La velocidad inicial es de:',vel_ini);
     }
+//calculo tiempo
     if (tf_tiempo==false) {
         tiempo = (vel_fin-vel_ini)/acel;
         console.log('El tiempo es de:',tiempo);
     }
+//calculo aceleracion
     if (tf_acel==false) {
         acel = (vel_fin-vel_ini)/tiempo;
         console.log('La aceleracion es de:',acel);
@@ -115,7 +136,4 @@ for (i in range(num_etapas)) {
     os.system('cls');
 
             }
-        }
-
-}
 
