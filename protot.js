@@ -7,8 +7,8 @@ function grafico(vi,ac,tm) {
     fig, (gf1, gf2) = plt.subplots(2, 1);
     X = np.linspace(0, tm);
     fig.suptitle(null);
-}
-    Y1 = vi * X + 0.5 * ac * (X ** 2)  
+
+    Y1 = vi * X + 0.5 * ac * (X ** 2)
     gf1.plot(X, Y1, marker='.', color='red');
     gf1.grid();
     gf1.set_title('Distancia');
@@ -24,7 +24,7 @@ function grafico(vi,ac,tm) {
 
     plt.subplots_adjust(hspace=0.6);
     plt.show();
-
+}
 dis_total=0;
 while (true) {
     num_etapas = Number(input('Ingrese el numero de etapas: '));
@@ -85,7 +85,7 @@ for (i in range(num_etapas)) {
     if (tf_acel==true && tf_tiempo==true && tf_vel_ini==true) {
             tf_vel_fin = false;
     } else {
-        if (acel==0)&(tf_tiempo==false){
+        if (acel==0 && tf_tiempo==false){
             console.log('Timepo indeterminable porque la velocidad no cambia, se pasa a la sig. etapa');
             tf_vel_fin = true
             vel_fin = vel_ini
@@ -95,11 +95,12 @@ for (i in range(num_etapas)) {
             if (vel_fin_ver.lower()=='si') {
                 vel_fin = float(input('Introduzca la velocidad final: '));
                 tf_vel_fin = true;
-        } else {
+        }} else {
             tf_vel_fin = true;
             vel_fin = float(input('Introduzca la velocidad final: '));
             tf_vel_fin = true;
-            }
+        }
+    }
 
 //calculos
 
@@ -131,9 +132,6 @@ for (i in range(num_etapas)) {
     time.sleep(1);
     }
     grafico(vel_ini,acel,tiempo);
-        }
+
     input('Enter para continuar');
     os.system('cls');
-
-            }
-
