@@ -1,0 +1,37 @@
+.contenedor-header h1{
+    padding: 20px;
+}
+
+.contenedor-main div{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.contenedor-main form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-calculator div label{
+    padding: 10px;
+}
+
+.form-calculator div input{
+    width: fit-content;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 8px;
+}
+.cal{
+    width: fit-content;
+}
+
+.contenedor-footer{
+    margin-top: auto;
+}
+
+.contenedor-res{
+    width: 100% !important;
+    display: flex;
+}
