@@ -16,7 +16,7 @@ const calculo = () =>{
     let dis_etapa = input_velinic * input_tiempo + 0.5 * input_acel * (input_tiempo **2)
 
     if(input_tiempo > 0 & input_acel > 0){ 
-        let resNAc = 'La distancia recorrida es de ' + dis_etapa + ' Mts. \n La velocidad alcanzada fue de ' + calc_acel + ' Mts/S. \n El tiempo transcurrido fue de ' + calc_tiempo + ' Segundos'
+        let resNAc = 'La distancia recorrida es de ' + dis_etapa + ' Mts. \n' + '\n La velocidad alcanzada fue de ' + calc_acel + ' m/s². \n' + ' \n El tiempo transcurrido fue de ' + calc_tiempo + ' Segundos'
         respuesta(resNAc)
         console.log(resNAc)
     } else {}
